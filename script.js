@@ -2,6 +2,7 @@ const input = document.getElementById('texto-tarefa');
 const button = document.getElementById('criar-tarefa');
 const list = document.getElementById('lista-tarefas');
 const clearButton = document.getElementById('apaga-tudo');
+const clearDonedTasks = document.getElementById('remover-finalizados');
 
 // Adiciona tarefa na lista
 button.addEventListener('click', () => {
@@ -32,4 +33,12 @@ list.addEventListener('dblclick', (event) => {
 // Remove todas as tarefas
 clearButton.addEventListener('click', () => {
   list.innerHTML = '';
+});
+
+// Remove tarefas finalizadas
+clearDonedTasks.addEventListener('click', () => {
+  const completedTasks = document.querySelectorAll('.completed');
+  completedTasks.forEach((task) => {
+    task.remove();
+  });
 });
