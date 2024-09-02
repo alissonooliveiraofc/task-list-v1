@@ -1,6 +1,7 @@
 const input = document.getElementById('texto-tarefa');
 const button = document.getElementById('criar-tarefa');
 const list = document.getElementById('lista-tarefas');
+const clearButton = document.getElementById('apaga-tudo');
 
 // Adiciona tarefa na lista
 button.addEventListener('click', () => {
@@ -26,4 +27,9 @@ list.addEventListener('dblclick', (event) => {
   } else {
     event.target.classList.add('completed');
   }
+});
+
+// Remove todas as tarefas
+clearButton.addEventListener('click', () => {
+  list.innerHTML = '';
 });
