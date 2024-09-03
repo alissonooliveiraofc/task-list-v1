@@ -105,22 +105,6 @@ const checkFromStorage = () => {
   }
 };
 
-const createDescription = () => {
-  const tittle = document.createElement('h2');
-  const doned = document.createElement('h2');
-
-  tittle.innerText = 'A fazer';
-  doned.innerText = 'Concluídas';
-
-  button.addEventListener('click', () => {
-    if (list.children.length !== 0) {
-      list.insertBefore(tittle, list.firstChild);
-    } else if (list.children === tittle) {
-      list.removeChild(tittle);
-    }
-  });
-};
-
 // Adiciona tarefa ao pressionar Enter
 input.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
@@ -130,5 +114,4 @@ input.addEventListener('keydown', (event) => {
 
 window.onload = () => {
   checkFromStorage();
-  createDescription();
 };

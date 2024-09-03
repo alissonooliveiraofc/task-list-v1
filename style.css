@@ -8,6 +8,10 @@ ul {
 
 }
 
+#lista-tarefas, #concluidas {
+  border: 1px solid black;
+}
+
 .selected {
   background-color: gray;
 }
