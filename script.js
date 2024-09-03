@@ -84,6 +84,7 @@ const loadingTasks = () => {
   });
 };
 
+// Restaura checkbox marcadas e desmarcadas
 const checkFromStorage = () => {
   loadingTasks();
   if (localStorage.getItem('tasks')) {
