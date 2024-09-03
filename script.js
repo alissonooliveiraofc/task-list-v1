@@ -3,6 +3,7 @@ const button = document.getElementById('criar-tarefa');
 const list = document.getElementById('lista-tarefas');
 const clearButton = document.getElementById('apaga-tudo');
 const clearDonedTasks = document.getElementById('remover-finalizados');
+const audio = document.getElementById('task-doned');
 
 // Adiciona tarefa na lista
 button.addEventListener('click', () => {
@@ -18,11 +19,6 @@ button.addEventListener('click', () => {
 
   list.appendChild(task);
   input.value = '';
-});
-
-// Remove todas as tarefas
-clearButton.addEventListener('click', () => {
-  list.innerHTML = '';
 });
 
 // Adiciona Tasks ao LocalStorage
@@ -53,12 +49,19 @@ clearDonedTasks.addEventListener('click', () => {
   });
 });
 
+// Remove todas as tarefas
+clearButton.addEventListener('click', () => {
+  list.innerHTML = '';
+  saveTasks();
+});
+
 // Adiciona riscado ao marcar checkbox
 list.addEventListener('click', (event) => {
   const task = event.target;
   if (task.className === 'task') {
     if (task.checked) {
       task.parentElement.classList.add('completed');
+      audio.play();
       saveTasks();
     } else {
       task.parentElement.classList.remove('completed');
