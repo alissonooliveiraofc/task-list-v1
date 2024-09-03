@@ -52,7 +52,11 @@ clearDonedTasks.addEventListener('click', () => {
 
 // Remove todas as tarefas
 clearButton.addEventListener('click', () => {
-  list.innerHTML = '';
+  const lis = document.querySelectorAll('#lista-tarefas li');
+  for (let index = 0; index < lis.length; index += 1) {
+    lis[index].remove();
+  }
+
   saveTasks();
 });
 
