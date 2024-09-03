@@ -25,14 +25,6 @@ clearButton.addEventListener('click', () => {
   list.innerHTML = '';
 });
 
-// Remove tarefas finalizadas
-clearDonedTasks.addEventListener('click', () => {
-  const completedTasks = document.querySelectorAll('.completed');
-  completedTasks.forEach((task) => {
-    task.remove();
-  });
-});
-
 // Adiciona Tasks ao LocalStorage
 const saveTasks = () => {
   const tasks = document.querySelectorAll('li');
@@ -51,6 +43,15 @@ const saveTasks = () => {
 };
 
 button.addEventListener('click', saveTasks);
+
+// Remove tarefas finalizadas
+clearDonedTasks.addEventListener('click', () => {
+  const completedTasks = document.querySelectorAll('.completed');
+  completedTasks.forEach((task) => {
+    task.remove();
+    saveTasks();
+  });
+});
 
 // Adiciona riscado ao marcar checkbox
 list.addEventListener('click', (event) => {
