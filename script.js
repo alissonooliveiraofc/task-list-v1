@@ -61,6 +61,7 @@ list.addEventListener('click', (event) => {
       saveTasks();
     } else {
       task.parentElement.classList.remove('completed');
+      saveTasks();
     }
   }
 });
