@@ -1,21 +1,148 @@
+/* Reset básico */
 * {
   box-sizing: border-box;
-  /* text-align: center; */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #00ff99;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+main {
+  width: 100%;
+  max-width: 600px;
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+}
+
+main h2 {
+  font-size: 1.8rem;
+  color: #00ff99;
+  margin-bottom: 15px;
+}
+
+div {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  font-size: 1rem;
+  background-color: #333;
+  color: #e0e0e0;
+  transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #00ff99;
+  outline: none;
+}
+
+button {
+  background-color: #00ff99;
+  color: #1a1a1a;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+  flex: 1 1 auto;
+}
+
+button:hover {
+  background-color: #00cc7a;
+  transform: translateY(-2px);
+}
+
+button:active {
+  background-color: #00995c;
+  transform: translateY(0);
 }
 
 ul {
   list-style: none;
-
+  margin-top: 10px;
 }
 
-#lista-tarefas, #concluidas {
-  border: 1px solid black;
+ul#lista-tarefas, ul#concluidas {
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #2a2a2a;
 }
 
-.selected {
-  background-color: gray;
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #333;
+  border-radius: 5px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+ul li:hover {
+  background-color: #00ff99;
+  color: #1a1a1a;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .completed {
   text-decoration: line-through;
+  color: #777;
 }
+
+.completed:hover {
+  background-color: #00995c;
+  color: #fff;
+}
+
+label {
+  flex-grow: 1;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+audio {
+  display: none;
+}
+
