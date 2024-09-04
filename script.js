@@ -4,7 +4,7 @@ const list = document.getElementById('lista-tarefas');
 const clearButton = document.getElementById('apaga-tudo');
 const clearDonedTasks = document.getElementById('remover-finalizados');
 const audio = document.getElementById('task-doned');
-// const concluidas = document.getElementById('concluidas');
+const completadas = document.getElementById('concluidas');
 
 // Adiciona tarefa na lista
 button.addEventListener('click', () => {
@@ -52,7 +52,7 @@ clearDonedTasks.addEventListener('click', () => {
 
 // Remove todas as tarefas
 clearButton.addEventListener('click', () => {
-  const lis = document.querySelectorAll('#lista-tarefas li');
+  const lis = document.querySelectorAll('li');
   for (let index = 0; index < lis.length; index += 1) {
     lis[index].remove();
   }
@@ -67,30 +67,51 @@ list.addEventListener('click', (event) => {
     if (task.checked) {
       task.parentElement.classList.add('completed');
       audio.play();
+      const newTask = task.parentElement;
+      completadas.appendChild(newTask);
       saveTasks();
-    } else {
+    } else if (!task.checked) {
       task.parentElement.classList.remove('completed');
       saveTasks();
     }
   }
 });
 
+// Remove tarefa desmarcada de completadas
+completadas.addEventListener('click', (event) => {
+  const task = event.target;
+  if (task.className === 'task') {
+    if (!task.checked) {
+      task.parentElement.classList.remove('completed');
+      list.appendChild(task.parentElement);
+      saveTasks();
+    } else if (task.checked) {
+      task.parentElement.classList.add('completed');
+      saveTasks();
+    }
+  }
+});
+
+const tasks = JSON.parse(localStorage.getItem('tasks'));
 // Recupera Tasks do LocalStorage
 const loadingTasks = () => {
-  const tasks = JSON.parse(localStorage.getItem('tasks'));
-
   tasks.forEach((task) => {
     const taskElement = document.createElement('li');
     const checkbox = document.createElement('input');
     const label = document.createElement('label');
-
     checkbox.className = 'task';
     checkbox.type = 'checkbox';
     label.innerText = task.text;
     taskElement.appendChild(checkbox);
     taskElement.appendChild(label);
-
-    list.appendChild(taskElement);
+    if (task.completed === true) {
+      completadas.appendChild(taskElement);
+      completadas.lastElementChild.classList.add('completed');
+      saveTasks();
+    } else {
+      list.appendChild(taskElement);
+      saveTasks();
+    }
   });
 };
 
@@ -98,7 +119,7 @@ const loadingTasks = () => {
 const checkFromStorage = () => {
   loadingTasks();
   if (localStorage.getItem('tasks')) {
-    const tasks = JSON.parse(localStorage.getItem('tasks'));
+    // const tasks = JSON.parse(localStorage.getItem('tasks'));
     tasks.forEach((task, index) => {
       const taskElement = document.querySelectorAll('li')[index];
       if (task.completed === true) {
