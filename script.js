@@ -5,6 +5,8 @@ const clearButton = document.getElementById('apaga-tudo');
 const clearDonedTasks = document.getElementById('remover-finalizados');
 const audio = document.getElementById('task-doned');
 const completadas = document.getElementById('concluidas');
+const h1 = document.querySelector('#colocar-h1');
+const sidebar = document.querySelector('.sidebar');
 
 // Adiciona tarefa na lista
 button.addEventListener('click', () => {
@@ -135,6 +137,10 @@ input.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     button.click();
   }
+});
+
+sidebar.addEventListener('mouseover', () => {
+  h1.innerText = 'Task List';
 });
 
 window.onload = () => {
