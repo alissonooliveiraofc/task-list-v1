@@ -206,3 +206,47 @@ svg {
   justify-content: center;
   text-align: center;
 }
+
+/* teste */
+.sidebar {
+  width: 60px;
+  /* background-color: #f4f4f4; */
+  padding: 20px;
+  /* box-shadow: 2px 0 5px rgba(0,0,0,0.1); */
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar:hover {
+  svg {
+    position: absolute;
+    left: 18px;
+    top: -11px;
+  };
+
+  width: 250px;
+  background-color: #e0e0e0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  height: 100%;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  white-space: nowrap;
+}
+
+.sidebar nav ul li a:hover {
+  color: #007BFF;
+}
