@@ -179,9 +179,9 @@ aside {
 
 svg {
   width: 40px;
-  position: relative;
-  left: 0;
-  top:-30px;
+  position: absolute;
+  left: 18px;
+  top: -11px;
   cursor: pointer;
 }
 
@@ -228,6 +228,7 @@ svg {
   background-color: #e0e0e0;
   box-shadow: 2px 0 5px rgba(0,0,0,0.1);
   height: 100%;
+  transition: 0.3;
 }
 
 .sidebar nav ul {
