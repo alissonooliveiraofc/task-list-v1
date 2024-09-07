@@ -71,14 +71,14 @@ input[type="text"]:focus {
 button {
   background-color: #2563eb;
   color: white;
-  padding: 13px 10px;
+  padding: 11px;
   border: none;
   border-radius: 40px;
   cursor: pointer;
   font-size: 15px;
   transition: background-color 0.3s, transform 0.3s;
-  /* flex: 1 1 auto; */
-  width: 150px;
+  font-weight: bold;
+  width: 160px;
 }
 
 button:hover {
@@ -141,6 +141,7 @@ label#task-header {
   color: #2563eb;
   font-size: 20px;
   font-weight: bold;
+  margin-top: 9px;
 }
 
 
@@ -187,6 +188,7 @@ svg {
 #texto-tarefa {
   border-color: #2563eb;
   color: black;
+  /* margin-top: 50px; */
 }
 
 .div-buttons {
@@ -196,6 +198,7 @@ svg {
   margin-left: 40px;
   margin-top: 7px;
   gap: 10px;
+  margin: 8px auto;
 }
 
 #inputs-menu {
