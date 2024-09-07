@@ -146,3 +146,26 @@ audio {
   display: none;
 }
 
+aside {
+  max-width: 600px;
+  /* background-color: #2a2a2a; */
+  padding: 20px;
+  border-radius: 10px;
+  /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); */
+  float: left;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  
+  text-align: center;
+}
+
+svg {
+  width: 40px;
+  position: relative;
+  left: 0;
+  top:-30px;
+  cursor: pointer;
+}
