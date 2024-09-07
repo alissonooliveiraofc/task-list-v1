@@ -69,22 +69,28 @@ input[type="text"]:focus {
 }
 
 button {
-  background-color: #2563eb;
-  color: white;
-  padding: 11px;
-  border: none;
-  border-radius: 40px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: background-color 0.3s, transform 0.3s;
-  font-weight: bold;
-  width: 160px;
+background-image: linear-gradient(to right, #36D1DC 0%, #5B86E5  51%, #36D1DC  100%);
+/* margin: 10px; */
+padding: 10px;
+text-align: center;
+text-transform: uppercase;
+transition: 0.5s;
+background-size: 200% auto;
+color: white;            
+box-shadow: 0 0 20px #eee;
+border-radius: 30px;
+display: block;  
+cursor: pointer;   
 }
+
 
 button:hover {
   background-color: #2563eb;
-  /* transform: translateY(-2px); */
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 button:active {
