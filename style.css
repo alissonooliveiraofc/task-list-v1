@@ -190,7 +190,6 @@ svg {
   position: absolute;
   left: 18px;
   top: -11px;
-  cursor: pointer;
 }
 
 #texto-tarefa {
@@ -216,37 +215,30 @@ svg {
 }
 
 .sidebar {
-  width: 60px;
-  /* padding: 20px; */
-  transition: width 0.3s ease;
+  width: 280px;
+  background-color:#e0e0e0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
   overflow: hidden;
+  height: 100%;
+  background-image: linear-gradient(to right, #516c6e 0%, #172749  51%, #000000  100%);
+  opacity: 0.7;
 }
-
-.sidebar:hover {
-  svg {
-    position: absolute;
-    left: 18px;
-    top: -11px;
-  };
-}
-
 
 nav {
   margin-top: 20px;
-
 }
 
 nav h1 {
   opacity: 1;
-  /* margin-left: 35px; */
+  margin-left: 35px;
   font-size: 20px;
-  /* margin-top: 9px; */
+  margin-top: 9px;
   color: white;
 }
 
 
 nav button {
-margin-left: 35px;
+margin-left: 80px;
 margin-top: 30px;
 }
 
@@ -259,18 +251,6 @@ margin-top: 30px;
   margin: 10px 0;
 }
 
-.sidebar nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  display: block;
-  white-space: nowrap;
-}
-
-.sidebar nav ul li a:hover {
-  color: #007BFF;
-}
-
 #colocar-h1 {
   margin-left: 10px;
   margin-top: 29px;
@@ -279,4 +259,18 @@ margin-top: 30px;
 
 li {
   list-style: none;
+  
+}
+
+.button-tasks {
+  margin: 0;
+  padding: 10;
+  width: 119px;
+  text-align: center;
+}
+
+.div-tasks {
+  display: flex;
+  flex-direction: row;
+  width: 170px;
 }
