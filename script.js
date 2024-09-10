@@ -185,6 +185,36 @@ const saveLists = () => {
 
 addTaskButton.addEventListener('click', saveLists);
 
+const lists = JSON.parse(localStorage.getItem('lists'));
+// Recupera Listas do LocalStorage
+const loadingLists = () => {
+  lists.forEach((lista) => {
+    const li = document.createElement('div');
+    const div = document.createElement('div');
+    const changeNameButton = document.createElement('button');
+    const removeButton = document.createElement('button');
+    const p = document.createElement('p');
+
+    removeButton.innerText = 'Apagar';
+    changeNameButton.innerText = 'Editar';
+    p.innerText = lista.text;
+
+    div.appendChild(changeNameButton);
+    div.appendChild(removeButton);
+
+    li.className = 'menu-tasks';
+    changeNameButton.className = 'button-tasks';
+    removeButton.className = 'button-tasks';
+    div.className = 'div-tasks';
+
+    li.style.cursor = 'pointer';
+    li.appendChild(p);
+    li.appendChild(div);
+    ulListas.appendChild(li);
+  });
+};
+
+loadingLists();
 window.onload = () => {
   checkFromStorage();
 };
