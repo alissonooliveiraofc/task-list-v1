@@ -142,7 +142,7 @@ input.addEventListener('keydown', (event) => {
 // Botão adicionar nova lista
 addTaskButton.addEventListener('click', () => {
   const inputTask = prompt('Digite o nome da Lista');
-  const li = document.createElement('li');
+  const li = document.createElement('div');
   const div = document.createElement('div');
   const changeNameButton = document.createElement('button');
   const removeButton = document.createElement('button');
