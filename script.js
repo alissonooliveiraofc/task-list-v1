@@ -158,7 +158,8 @@ addTaskButton.addEventListener('click', () => {
 
   li.className = 'menu-tasks';
   changeNameButton.className = 'button-tasks';
-  removeButton.className = 'button-tasks';
+  removeButton.classList.add('button-tasks');
+  removeButton.classList.add('remove-button');
   div.className = 'div-tasks';
 
   li.style.cursor = 'pointer';
@@ -205,6 +206,7 @@ const loadingLists = () => {
       li.className = 'menu-tasks';
       changeNameButton.className = 'button-tasks';
       removeButton.className = 'button-tasks';
+      removeButton.classList.add('remove-button');
       div.className = 'div-tasks';
 
       li.style.cursor = 'pointer';
@@ -216,6 +218,15 @@ const loadingLists = () => {
 };
 
 loadingLists();
+
+// const deleteList = (event) => {
+//   const lista = event.target.parentElement.parentElement;
+//   lista.remove();
+//   saveLists();
+// };
+
+// deleteList();
+
 window.onload = () => {
   checkFromStorage();
 };
