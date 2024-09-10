@@ -68,7 +68,8 @@ list.addEventListener('click', (event) => {
   if (task.className === 'task') {
     if (task.checked) {
       task.parentElement.classList.add('completed');
-      audio.play();
+      // removi o som mas ative se quiser
+      // audio.play();
       const newTask = task.parentElement;
       completadas.appendChild(newTask);
       saveTasks();

@@ -273,19 +273,22 @@ li {
   width: 170px;
   margin-left: 100px;
   position: relative;
-  top: -50px;
+  top: -47px;
+  left: 20px;
 }
 
 .menu-tasks {
   height: 60px;
   border-radius: 5%;
   background-color: #2563eb;
+  position: relative;
+  margin-bottom: 3px;
 }
 
 p {
   position: relative;
-  top: 10px;
-  left: -3px;
+  top: 23px;
+  left: 15px;
   text-transform: uppercase;
   font-weight: bold;
 }
