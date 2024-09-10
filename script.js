@@ -144,7 +144,8 @@ input.addEventListener('keydown', (event) => {
 // Remove lista
 const deleteList = (event) => {
   const listStorage = JSON.parse(localStorage.getItem('lists'));
-  const listText = event.target.parentElement.parentElement.firstElementChild.innerText;
+  const listText =
+    event.target.parentElement.parentElement.firstElementChild.innerText;
 
   for (let index = 0; index < listStorage.length; index += 1) {
     if (listStorage[index].text === listText) {
@@ -164,6 +165,7 @@ for (let index = 0; index < removeButtonList.length; index += 1) {
 // Botão adicionar nova lista
 addTaskButton.addEventListener('click', () => {
   const inputTask = prompt('Digite o nome da Lista');
+  if (!inputTask) return alert('Você esqueceu do nome da Lista, volta lá!'); // Se não tiver input, sai da função
   const li = document.createElement('div');
   const div = document.createElement('div');
   const changeNameButton = document.createElement('button');
