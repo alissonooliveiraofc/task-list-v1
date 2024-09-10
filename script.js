@@ -8,7 +8,7 @@ const completadas = document.getElementById('concluidas');
 const h1 = document.querySelector('#colocar-h1');
 const sidebar = document.querySelector('.sidebar');
 const menu = document.querySelector('#menu-icon');
-const addTaskButton = document.querySelector('add-task');
+const addTaskButton = document.querySelector('.add-task');
 
 // Adiciona tarefa na lista
 button.addEventListener('click', () => {
@@ -176,6 +176,58 @@ menu.addEventListener('click', () => {
     if (buttonAddTask) {
       buttonAddTask.remove();
       buttonAddTask = null;
+    }
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('add-task')) {
+    const nameList = prompt('Insira o nome da Lista');
+    if (nameList) {
+      const ul = document.createElement('ul');
+      const li = document.createElement('li');
+
+      // Cria o span para o nome da lista
+      const span = document.createElement('span');
+      span.innerText = nameList;
+
+      // cria botão de abrir
+      const openButton = document.createElement('button');
+      openButton.innerText = 'Abrir';
+      openButton.style.display = 'inline';
+      openButton.style.marginLeft = '10px';
+      openButton.style.fontSize = '10px';
+
+      // Cria o botão de exclusão
+      const deleteButton = document.createElement('button');
+      deleteButton.innerText = 'Excluir';
+      deleteButton.style.display = 'inline';
+      deleteButton.style.marginLeft = '10px';
+      deleteButton.style.fontSize = '10px';
+      deleteButton.addEventListener('click', () => {
+        li.remove();
+      });
+
+      // Cria o botão de modificação
+      const modifyButton = document.createElement('button');
+      modifyButton.innerText = 'Modificar';
+      modifyButton.style.display = 'inline';
+      modifyButton.style.marginLeft = '5px';
+      modifyButton.style.fontSize = '10px';
+      modifyButton.addEventListener('click', () => {
+        const newName = prompt('Insira o novo nome da Lista');
+        if (newName) {
+          span.innerText = newName;
+        }
+      });
+
+      // Adiciona o span e os botões ao li
+      li.appendChild(span);
+      li.appendChild(openButton);
+      li.appendChild(deleteButton);
+      li.appendChild(modifyButton);
+
+      event.target.parentElement.appendChild(li);
     }
   }
 });
