@@ -7,6 +7,7 @@ const clearDonedTasks = document.getElementById('remover-finalizados');
 const completadas = document.getElementById('concluidas');
 const addTaskButton = document.querySelector('#adiciona-task');
 const ulListas = document.querySelector('#menu-ul');
+const removeButtonList = document.querySelectorAll('.remove-button');
 
 // Adiciona tarefa na lista
 button.addEventListener('click', () => {
@@ -140,6 +141,26 @@ input.addEventListener('keydown', (event) => {
   }
 });
 
+// Remove lista
+const deleteList = (event) => {
+  const listStorage = JSON.parse(localStorage.getItem('lists'));
+  const listText = event.target.parentElement.parentElement.firstElementChild.innerText;
+
+  for (let index = 0; index < listStorage.length; index += 1) {
+    if (listStorage[index].text === listText) {
+      listStorage.splice(index, 1);
+      break;
+    }
+  }
+
+  localStorage.setItem('lists', JSON.stringify(listStorage));
+  document.location.reload();
+};
+
+for (let index = 0; index < removeButtonList.length; index += 1) {
+  removeButtonList[index].addEventListener('click', deleteList);
+}
+
 // Botão adicionar nova lista
 addTaskButton.addEventListener('click', () => {
   const inputTask = prompt('Digite o nome da Lista');
@@ -166,6 +187,8 @@ addTaskButton.addEventListener('click', () => {
   li.appendChild(p);
   li.appendChild(div);
   ulListas.appendChild(li);
+
+  removeButton.addEventListener('click', deleteList);
 });
 
 // Adiciona Listas ao LocalStorage
@@ -213,19 +236,13 @@ const loadingLists = () => {
       li.appendChild(p);
       li.appendChild(div);
       ulListas.appendChild(li);
+
+      removeButton.addEventListener('click', deleteList);
     });
   }
 };
 
 loadingLists();
-
-// const deleteList = (event) => {
-//   const lista = event.target.parentElement.parentElement;
-//   lista.remove();
-//   saveLists();
-// };
-
-// deleteList();
 
 window.onload = () => {
   checkFromStorage();
