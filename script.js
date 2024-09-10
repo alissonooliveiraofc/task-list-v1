@@ -3,7 +3,7 @@ const button = document.getElementById('criar-tarefa');
 const list = document.getElementById('lista-tarefas');
 const clearButton = document.getElementById('apaga-tudo');
 const clearDonedTasks = document.getElementById('remover-finalizados');
-const audio = document.getElementById('task-doned');
+// const audio = document.getElementById('task-doned');
 const completadas = document.getElementById('concluidas');
 const addTaskButton = document.querySelector('#adiciona-task');
 const ulListas = document.querySelector('#menu-ul');
@@ -166,6 +166,24 @@ addTaskButton.addEventListener('click', () => {
   li.appendChild(div);
   ulListas.appendChild(li);
 });
+
+// Adiciona Listas ao LocalStorage
+const saveLists = () => {
+  const lists = document.querySelectorAll('.menu-tasks');
+  const listsArray = [];
+
+  lists.forEach((lista) => {
+    const obj = {
+      text: lista.firstElementChild.innerText,
+    };
+
+    listsArray.push(obj);
+  });
+
+  localStorage.setItem('lists', JSON.stringify(listsArray));
+};
+
+addTaskButton.addEventListener('click', saveLists);
 
 window.onload = () => {
   checkFromStorage();
