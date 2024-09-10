@@ -28,7 +28,7 @@ aside nav h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-left: 20px;
-  opacity: 0;
+  opacity: 1;
 }
 
 main {
@@ -172,7 +172,7 @@ audio {
 aside {
   max-width: 600px;
   /* background-color: #2a2a2a; */
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: 10px;
   /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7); */
   float: left;
@@ -215,11 +215,9 @@ svg {
   text-align: center;
 }
 
-/* teste */
 .sidebar {
   width: 60px;
-  /* background-color: #f4f4f4; */
-  padding: 20px;
+  /* padding: 20px; */
   transition: width 0.3s ease;
   overflow: hidden;
 }
@@ -230,21 +228,26 @@ svg {
     left: 18px;
     top: -11px;
   };
+}
 
-  width: 250px;
-  background-color: #e0e0e0;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-  height: 100%;
-  transition: 0.3;
-  background-image: linear-gradient(to right, #516c6e 0%, #172749  51%, #000000  100%);
-  opacity: 0.7;
 
-  h1 {
-    opacity: 1;
-    margin-left: 35px;
-    font-size: 20px;
-    margin-top: 9px;
-  }
+nav {
+  margin-top: 20px;
+
+}
+
+nav h1 {
+  opacity: 1;
+  /* margin-left: 35px; */
+  font-size: 20px;
+  /* margin-top: 9px; */
+  color: white;
+}
+
+
+nav button {
+margin-left: 35px;
+margin-top: 30px;
 }
 
 .sidebar nav ul {
@@ -266,4 +269,10 @@ svg {
 
 .sidebar nav ul li a:hover {
   color: #007BFF;
+}
+
+#colocar-h1 {
+  margin-left: 10px;
+  margin-top: 29px;
+  font-size: 16px;
 }

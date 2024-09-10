@@ -7,6 +7,8 @@ const audio = document.getElementById('task-doned');
 const completadas = document.getElementById('concluidas');
 const h1 = document.querySelector('#colocar-h1');
 const sidebar = document.querySelector('.sidebar');
+const menu = document.querySelector('#menu-icon');
+const addTaskButton = document.querySelector('add-task');
 
 // Adiciona tarefa na lista
 button.addEventListener('click', () => {
@@ -139,8 +141,43 @@ input.addEventListener('keydown', (event) => {
   }
 });
 
-sidebar.addEventListener('mouseover', () => {
-  h1.innerText = 'Task List';
+let buttonAddTask = null;
+
+// Menu lateral
+menu.addEventListener('click', () => {
+  if (!sidebar.classList.contains('show')) {
+    sidebar.classList.add('show');
+    if (!buttonAddTask) {
+      buttonAddTask = document.createElement('button');
+      sidebar.lastElementChild.appendChild(buttonAddTask);
+      buttonAddTask.innerText = '+ Nova Lista de Tarefas';
+      buttonAddTask.className = 'add-task';
+    }
+    h1.innerHTML = 'Task List';
+    h1.classList.add('show');
+    sidebar.style.width = '280px';
+    sidebar.style.backgroundColor = '#e0e0e0';
+    sidebar.style.boxShadow = '2px 0 5px rgba(0,0,0,0.1)';
+    sidebar.style.height = '100%';
+    sidebar.style.transition = '0.3s';
+    sidebar.style.backgroundImage =
+      'linear-gradient(to right, #516c6e 0%, #172749  51%, #000000  100%)';
+    sidebar.style.opacity = '0.7';
+  } else {
+    sidebar.classList.remove('show');
+    h1.classList.remove('show');
+    sidebar.style.width = '';
+    sidebar.style.backgroundColor = '';
+    sidebar.style.boxShadow = '';
+    sidebar.style.height = '';
+    sidebar.style.transition = '';
+    sidebar.style.backgroundImage = '';
+    h1.innerHTML = '';
+    if (buttonAddTask) {
+      buttonAddTask.remove();
+      buttonAddTask = null;
+    }
+  }
 });
 
 window.onload = () => {
