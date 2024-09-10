@@ -146,23 +146,22 @@ addTaskButton.addEventListener('click', () => {
   const div = document.createElement('div');
   const changeNameButton = document.createElement('button');
   const removeButton = document.createElement('button');
-  const openButton = document.createElement('button');
+  const p = document.createElement('p');
 
-  openButton.innerText = 'Abrir';
   removeButton.innerText = 'Apagar';
   changeNameButton.innerText = 'Editar';
-  div.appendChild(openButton);
+  p.innerText = inputTask;
+
   div.appendChild(changeNameButton);
   div.appendChild(removeButton);
 
   li.className = 'menu-tasks';
   changeNameButton.className = 'button-tasks';
   removeButton.className = 'button-tasks';
-  openButton.className = 'button-tasks';
   div.className = 'div-tasks';
 
   li.style.cursor = 'pointer';
-  li.innerText = inputTask;
+  li.appendChild(p);
   li.appendChild(div);
   ulListas.appendChild(li);
 });

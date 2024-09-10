@@ -263,14 +263,33 @@ li {
 }
 
 .button-tasks {
-  margin: 0;
+  margin-left: -6px;
   padding: 10;
-  width: 119px;
+  width: 80px;
   text-align: center;
 }
 
 .div-tasks {
-  display: flex;
-  flex-direction: row;
   width: 170px;
+  margin-left: 100px;
+  position: relative;
+  top: -50px;
+}
+
+.menu-tasks {
+  height: 60px;
+  border-radius: 5%;
+  background-color: #2563eb;
+}
+
+p {
+  position: relative;
+  top: 10px;
+  left: -3px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#menu-ul {
+  margin-top: 30px;
 }
