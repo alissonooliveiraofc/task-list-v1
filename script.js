@@ -3,7 +3,7 @@ const button = document.getElementById('criar-tarefa');
 const list = document.getElementById('lista-tarefas');
 const clearButton = document.getElementById('apaga-tudo');
 const clearDonedTasks = document.getElementById('remover-finalizados');
-// const audio = document.getElementById('task-doned');
+const audio = document.getElementById('task-doned');
 const completadas = document.getElementById('concluidas');
 const addTaskButton = document.querySelector('#adiciona-task');
 const ulListas = document.querySelector('#menu-ul');
@@ -70,7 +70,7 @@ list.addEventListener('click', (event) => {
     if (task.checked) {
       task.parentElement.classList.add('completed');
       // removi o som mas ative se quiser
-      // audio.play();
+      audio.play();
       const newTask = task.parentElement;
       completadas.appendChild(newTask);
       saveTasks();
@@ -163,88 +163,88 @@ for (let index = 0; index < removeButtonList.length; index += 1) {
 }
 
 // Botão adicionar nova lista
-addTaskButton.addEventListener('click', () => {
-  const inputTask = prompt('Digite o nome da Lista');
-  if (!inputTask) return alert('Você esqueceu do nome da Lista, volta lá!'); // Se não tiver input, sai da função
-  const li = document.createElement('div');
-  const div = document.createElement('div');
-  const changeNameButton = document.createElement('button');
-  const removeButton = document.createElement('button');
-  const p = document.createElement('p');
+// addTaskButton.addEventListener('click', () => {
+//   const inputTask = prompt('Digite o nome da Lista');
+//   if (!inputTask) return alert('Você esqueceu do nome da Lista, volta lá!'); // Se não tiver input, sai da função
+//   const li = document.createElement('div');
+//   const div = document.createElement('div');
+//   const changeNameButton = document.createElement('button');
+//   const removeButton = document.createElement('button');
+//   const p = document.createElement('p');
 
-  removeButton.innerText = 'Apagar';
-  changeNameButton.innerText = 'Editar';
-  p.innerText = inputTask;
+//   removeButton.innerText = 'Apagar';
+//   changeNameButton.innerText = 'Editar';
+//   p.innerText = inputTask;
 
-  div.appendChild(changeNameButton);
-  div.appendChild(removeButton);
+//   div.appendChild(changeNameButton);
+//   div.appendChild(removeButton);
 
-  li.className = 'menu-tasks';
-  changeNameButton.className = 'button-tasks';
-  removeButton.classList.add('button-tasks');
-  removeButton.classList.add('remove-button');
-  div.className = 'div-tasks';
+//   li.className = 'menu-tasks';
+//   changeNameButton.className = 'button-tasks';
+//   removeButton.classList.add('button-tasks');
+//   removeButton.classList.add('remove-button');
+//   div.className = 'div-tasks';
 
-  li.style.cursor = 'pointer';
-  li.appendChild(p);
-  li.appendChild(div);
-  ulListas.appendChild(li);
+//   li.style.cursor = 'pointer';
+//   li.appendChild(p);
+//   li.appendChild(div);
+//   ulListas.appendChild(li);
 
-  removeButton.addEventListener('click', deleteList);
-});
+//   removeButton.addEventListener('click', deleteList);
+// });
 
 // Adiciona Listas ao LocalStorage
-const saveLists = () => {
-  const lists = document.querySelectorAll('.menu-tasks');
-  const listsArray = [];
+// const saveLists = () => {
+//   const lists = document.querySelectorAll('.menu-tasks');
+//   const listsArray = [];
 
-  lists.forEach((lista) => {
-    const obj = {
-      text: lista.firstElementChild.innerText,
-    };
+//   lists.forEach((lista) => {
+//     const obj = {
+//       text: lista.firstElementChild.innerText,
+//     };
 
-    listsArray.push(obj);
-  });
+//     listsArray.push(obj);
+//   });
 
-  localStorage.setItem('lists', JSON.stringify(listsArray));
-};
+//   localStorage.setItem('lists', JSON.stringify(listsArray));
+// };
 
-addTaskButton.addEventListener('click', saveLists);
+// addTaskButton.addEventListener('click', saveLists);
 
-const lists = JSON.parse(localStorage.getItem('lists'));
-const loadingLists = () => {
-  if (localStorage.getItem('lists')) {
-    lists.forEach((lista) => {
-      const li = document.createElement('div');
-      const div = document.createElement('div');
-      const changeNameButton = document.createElement('button');
-      const removeButton = document.createElement('button');
-      const p = document.createElement('p');
+// const lists = JSON.parse(localStorage.getItem('lists'));
+// const loadingLists = () => {
+//   if (localStorage.getItem('lists')) {
+//     lists.forEach((lista) => {
+//       const li = document.createElement('div');
+//       const div = document.createElement('div');
+//       const changeNameButton = document.createElement('button');
+//       const removeButton = document.createElement('button');
+//       const p = document.createElement('p');
 
-      removeButton.innerText = 'Apagar';
-      changeNameButton.innerText = 'Editar';
-      p.innerText = lista.text;
+//       removeButton.innerText = 'Apagar';
+//       changeNameButton.innerText = 'Editar';
+//       p.innerText = lista.text;
 
-      div.appendChild(changeNameButton);
-      div.appendChild(removeButton);
+//       div.appendChild(changeNameButton);
+//       div.appendChild(removeButton);
 
-      li.className = 'menu-tasks';
-      changeNameButton.className = 'button-tasks';
-      removeButton.className = 'button-tasks';
-      removeButton.classList.add('remove-button');
-      div.className = 'div-tasks';
+//       li.className = 'menu-tasks';
+//       changeNameButton.className = 'button-tasks';
+//       removeButton.className = 'button-tasks';
+//       removeButton.classList.add('remove-button');
+//       div.className = 'div-tasks';
 
-      li.style.cursor = 'pointer';
-      li.appendChild(p);
-      li.appendChild(div);
-      ulListas.appendChild(li);
+//       li.style.cursor = 'pointer';
+//       li.appendChild(p);
+//       li.appendChild(div);
+//       ulListas.appendChild(li);
 
-      removeButton.addEventListener('click', deleteList);
-    });
-  }
-};
+//       removeButton.addEventListener('click', deleteList);
+//     });
+//   }
+// };
 
-loadingLists();
+// loadingLists();
 
 window.onload = () => {
   checkFromStorage();
