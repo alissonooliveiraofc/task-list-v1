@@ -402,11 +402,15 @@ p, a {
       display: none;
     }
   
+    body {
+      margin-top: -25px;
+    }
     main {
       margin-left: 0;
       width: 100%;
       height: auto;
       box-shadow: none;
+      
       padding: 15px;
     }
   
@@ -492,6 +496,10 @@ p, a {
       display: none; /* Esconde a sidebar */
     }
   
+    body {
+      width: 100%;
+      background-color: white;
+    }
     main {
       margin-top: 5px;
       margin-left: 0;
@@ -506,6 +514,9 @@ p, a {
       height: 240px;
     }
   
+    #task-header{
+      margin-bottom: 5px;
+    }
     .div-tasks {
       margin-left: 0;
       width: 100%;
