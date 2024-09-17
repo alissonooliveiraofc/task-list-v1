@@ -396,3 +396,247 @@ p, a {
       z-index: 0;
     }
   }
+
+  @media (max-width: 414px) { /* Para telas até 414px, que inclui o Motorola One Fusion Plus */
+    .sidebar {
+      display: none;
+    }
+  
+    main {
+      margin-left: 0;
+      width: 100%;
+      height: auto;
+      box-shadow: none;
+      padding: 15px;
+    }
+  
+    ul {
+      max-height: 240px;
+      height: 240px;
+    }
+  
+    .div-tasks {
+      margin-left: 0;
+      width: 100%;
+      position: static;
+    }
+  
+    .div-buttons {
+      margin-left: 0;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    #texto-tarefa {
+      width: 100%;
+    }
+  
+    ul#lista-tarefas, ul#concluidas {
+      width: 100%;
+    }
+  
+    #phrase {
+      width: 100%;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 390px) { /* Para iPhone 12 e similares */
+    header {
+      font-size: 18px;
+    }
+  
+    main {
+      padding: 20px;
+      height: auto;
+      margin: 0 auto;
+      width: 100%;
+    }
+  
+    ul {
+      max-height: 500px;
+      height: auto;
+    }
+  
+    ul#lista-tarefas, ul#concluidas {
+      height: 240px;
+    }
+  
+    ul#concluidas {
+      margin-top: 40px;
+    }
+  
+    .div-tasks {
+      width: 100%;
+      margin: 0 auto;
+      top: 0;
+    }
+  
+    .div-buttons {
+      margin: 0 auto;
+      justify-content: center;
+      width: 100%;
+    }
+  
+    a {
+      position: relative;
+      top: 465px;
+    }
+  }
+
+  @media (max-width: 428px) { /* Para iPhone 13 Pro Max */
+    .sidebar {
+      display: none; /* Esconde a sidebar */
+    }
+  
+    main {
+      margin-top: 5px;
+      margin-left: 0;
+      width: 100%; /* Ocupa toda a largura */
+      height: auto;
+      box-shadow: none;
+      padding: 15px;
+    }
+  
+    ul {
+      max-height: 240px;
+      height: 240px;
+    }
+  
+    .div-tasks {
+      margin-left: 0;
+      width: 100%;
+      position: static;
+    }
+  
+    .div-buttons {
+      margin-left: 0;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    #texto-tarefa {
+      width: 100%; /* Campo de texto ocupa toda a largura */
+    }
+  
+    ul#lista-tarefas, ul#concluidas {
+      width: 100%; /* Listas de tarefas ocupam toda a largura */
+    }
+  
+    #phrase {
+      width: 100%; /* Centraliza e ajusta a frase */
+    }
+  
+    button {
+      width: 100%; /* Botões ocupam toda a largura */
+    }
+  }
+
+  @media (max-width: 360px) {
+    .sidebar {
+      display: none; /* Esconde a sidebar */
+    }
+  
+    main {
+      margin-top: 100px;
+      margin-left: 0;
+      width: 100%; /* Ocupa toda a largura */
+      height: auto;
+      box-shadow: none;
+      padding: 15px;
+    }
+  
+    ul {
+      max-height: 240px;
+      height: 240px;
+    }
+  
+    .div-tasks {
+      margin-left: 0;
+      width: 100%;
+      position: static;
+    }
+  
+    .div-buttons {
+      margin-left: 0;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    #texto-tarefa {
+      width: 100%; /* Campo de texto ocupa toda a largura */
+    }
+  
+    ul#lista-tarefas, ul#concluidas {
+      width: 100%; /* Listas de tarefas ocupam toda a largura */
+    }
+  
+    #phrase {
+      width: 100%; /* Centraliza e ajusta a frase */
+    }
+  
+    button {
+      width: 100%; /* Botões ocupam toda a largura */
+    }
+  
+    #task-header {
+      font-size: 18px; /* Ajusta o tamanho da fonte para telas menores */
+    }
+  }
+  
+
+  @media (max-width: 390px) {
+    .sidebar {
+      display: none; /* Esconde a sidebar */
+    }
+  
+    main {
+      margin-top: 130px;
+      margin-left: 0;
+      width: 100%; /* Ocupa toda a largura */
+      height: auto;
+      box-shadow: none;
+      padding: 15px;
+    }
+  
+    ul {
+      max-height: 240px;
+      height: 240px;
+    }
+  
+    .div-tasks {
+      margin-left: 0;
+      width: 100%;
+      position: static;
+    }
+  
+    .div-buttons {
+      margin-left: 0;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    #texto-tarefa {
+      width: 100%; /* Campo de texto ocupa toda a largura */
+    }
+  
+    ul#lista-tarefas, ul#concluidas {
+      width: 100%; /* Listas de tarefas ocupam toda a largura */
+    }
+  
+    #phrase {
+      width: 100%; /* Centraliza e ajusta a frase */
+    }
+  
+    button {
+      width: 100%; /* Botões ocupam toda a largura */
+    }
+  
+    #task-header {
+      font-size: 18px; /* Ajusta o tamanho da fonte para telas menores */
+    }
+  }
+  
